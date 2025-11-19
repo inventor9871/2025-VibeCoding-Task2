@@ -142,6 +142,44 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
+    /* ===================================
+   防止任何水平捲動
+   =================================== */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===================================
+   320px 以下排版修正
+   =================================== */
+@media (max-width: 360px) {
+  .nav {
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;        /* 換行避免撐爆 */
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .section {
+    padding: 3rem 1rem;     /* 左右縮小避免加總超出 */
+  }
+
+  .section-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content {
+    padding: 0 0.5rem;      /* 再保險一層避免撐開 */
+  }
+}
+
+
     @media (min-width: 768px) {
       .section-hero h1 {
         font-size: 3rem;
